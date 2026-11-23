@@ -1,0 +1,6 @@
+name = "longhaul"
+compatibility_date = "2026-06-01"
+
+# 화면만 있는 사이트 · 서버 코드 없음
+[assets]
+directory = "./public"

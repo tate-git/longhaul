@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1d2350">
+<title>밤샘 운행</title>
+<meta name="description" content="노을 지는 고속도로를 트럭으로 달려 화물을 배달해요 · 톨게이트 · 터널 · 휴게소 · 대교 · 밤의 물류센터까지">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="밤샘 운행">
+<meta property="og:url" content="https://longhaul.lunchtime.workers.dev/">
+<meta property="og:title" content="🚛 밤샘 운행">
+<meta property="og:description" content="노을 지는 고속도로를 트럭으로 달려 화물을 배달해요 · 톨게이트 · 터널 · 휴게소 · 대교 · 밤의 물류센터까지">
+<meta property="og:image" content="https://longhaul.lunchtime.workers.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://longhaul.lunchtime.workers.dev/og.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body data-view="home">
+<canvas id="cv"></canvas>
+
+<section id="home" class="screen">
+  <button id="langBtn" type="button" class="btn ghost corner"></button>
+  <h1 data-t="title"></h1>
+  <p class="sub" data-t="sub"></p>
+  <div class="job">
+    <p class="k" data-t="job"></p>
+    <p class="cargo" data-t="cargo"></p>
+    <p class="route" data-t="route"></p>
+  </div>
+  <p class="how" data-t="how"></p>
+  <button id="start" type="button" class="btn big" data-t="start"></button>
+  <p class="tip" id="rotTip" data-t="rotate" hidden></p>
+</section>
+
+<div id="hud">
+  <div class="tl"><b id="clock"></b><span data-t="cargoShort"></span></div>
+  <div class="tc"><span id="next"></span><span id="dest"></span></div>
+  <div class="tr"><button id="view" type="button" class="btn ghost mini">🎥</button><button id="quit" type="button" class="btn ghost mini">✕</button></div>
+  <div id="navi"><canvas id="naviCv"></canvas><div class="nv-bar"><i id="limit">90</i><span id="eta"></span></div></div>
+  <div id="speedo"><b id="kmh">0</b><span>km/h</span><em id="cruiseOn"></em></div>
+  <p id="toast"></p>
+  <button id="rest" type="button" class="btn" data-t="restBtn" hidden></button>
+  <div id="pads">
+    <div id="wheel"><span id="wheelIc">🛞</span><small data-t="steerHint"></small></div>
+    <div class="pedals"><button id="cruise" type="button" class="btn ghost" data-t="cruise"></button><button id="brake" type="button" class="pedal br" data-t="brake"></button><button id="gas" type="button" class="pedal gs" data-t="gas"></button></div>
+  </div>
+</div>
+<div id="fade"></div>
+<div id="card" hidden></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
